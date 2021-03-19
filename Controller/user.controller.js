@@ -9,6 +9,14 @@ exports.test = async (req, res) => {
 	});
 };
 
+if (user) return res.status(200).json({ message: 'User already registered' });
+
+	user = await UserService.createUser({
+		user_name: req.body.user_name,
+		password: req.body.password,
+		email: req.body.email,
+		status: 'Active'
+	});
 exports.createUser = async (req, res) => {
 	let user = await UserService.getOneByEmail({ email: req.body.email });
 	console.log('user', user);
