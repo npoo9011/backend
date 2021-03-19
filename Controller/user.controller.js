@@ -29,6 +29,7 @@ exports.createUser = async (req, res) => {
 	});
 };
 
+// signIn function.
 exports.signIn = async (req, res) => {
 	console.log('someone trying to connect..');
 
